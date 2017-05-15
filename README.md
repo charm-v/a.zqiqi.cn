@@ -1,3 +1,3 @@
-#a.zqiqi.cn
-测试同时更新
+#blog.zqiqi.cn
 
+设置同步更新测试
