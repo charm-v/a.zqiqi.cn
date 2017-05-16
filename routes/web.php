@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('test', ['uses' => 'TestController@index']);
+Route::get('yemian', ['uses' => 'TestController@yemian']);

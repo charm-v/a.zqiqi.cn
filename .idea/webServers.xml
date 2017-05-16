@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="df4cadc5-7abe-4e35-a137-986e81ca75b3" name="a.zqiqi.cn" url="http://123.56.247.104">
+        <fileTransfer host="123.56.247.104" port="22" rootFolder="/www/wwwroot/a.zqiqi.cn" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
