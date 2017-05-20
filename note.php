@@ -17,3 +17,6 @@ php artisan make:controller CategoryController
  var mobile = 13527261231;
  var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
  alert(myreg.test(mobile));
+
+//2017.05.20
+垂直方向焦点轮播问题
