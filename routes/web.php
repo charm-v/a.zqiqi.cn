@@ -15,5 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * 后台
+ */
+//Route::group(['prefix' => 'admin'], ['namespace' => 'Admin'], function () {
+//    // 在 "App\Http\Controllers\Admin" 命名空间下的控制器
+//    Route::get('category/index', 'CategoryController@index');
+//});
+
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function () {
+    //后台首页
+    Route::group(['prefix' => 'cate'], function () {
+        Route::get('index', 'CategoryController@index');
+        Route::get('welcome', 'CategoryController@welcome');
+    });
+});
+
 Route::get('test', ['uses' => 'TestController@index']);
 Route::get('yemian', ['uses' => 'TestController@yemian']);
