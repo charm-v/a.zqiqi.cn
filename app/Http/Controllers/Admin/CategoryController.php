@@ -10,6 +10,6 @@ class CategoryController extends Controller
     //
     public function index()
     {
-        echo 'category/index';
+        return view('admin.cate.index');
     }
 }
