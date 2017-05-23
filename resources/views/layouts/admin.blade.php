@@ -10,15 +10,6 @@
 </head>
 <body>
 
-    @section('nav')
-        admin-nav
-        @show
-
-
-    <div class="container">
-        <p>父级content</p>
-        @yield('conten')
-    </div>
 
 
 </body>
