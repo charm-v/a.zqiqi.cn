@@ -27,6 +27,7 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function () {
     //后台首页
     Route::group(['prefix' => 'cate'], function () {
         Route::get('index', 'CategoryController@index');
+        Route::get('add', 'CategoryController@add');
         Route::get('welcome', 'CategoryController@welcome');
     });
 });
