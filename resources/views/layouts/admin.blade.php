@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('/admin/assets/css/amazeui.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('/admin/assets/css/admin.css') }}">
     <link rel="stylesheet" href="{{ asset('/admin/assets/css/app.css') }}">
-    <script src="{{ asset('/admin/assets/js/echarts.min.js') }}"></script>
+    {{--<script src="{{ asset('/admin/assets/js/echarts.min.js') }}"></script> --}}
 </head>
 
 <body data-type="index">
