@@ -1,64 +1,142 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+<head>
 
-        <title>Laravel</title>
-        <style>
-            .a{
-                border-bottom: 3px solid #dbdbdb;
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html;charset=gbk">
+    <style>
+        #cas{
+            display: block;
+            border:1px solid;
+            margin:100px auto;
+        }
+    </style>
+    <title>3D旋转球</title>
+</head>
+<body style="background-color:#000">
+<div >
+    <canvas id='cas' width="300" height="300">浏览器不支持canvas，请更新浏览器后再浏览</canvas>
+    <div style="width:50px;margin:10px auto">
+        <button id="controlBtn">停止</button>
+    </div>
+</div>
+<script>
+    var canvas = document.getElementById("cas"),
+        ctx = canvas.getContext("2d"),
+        vpx = canvas.width/2,
+        vpy = canvas.height/2,
+        Radius = 150,
+        balls = [],
+        angleX = Math.PI/100,
+        angleY = Math.PI/100;
+    window.addEventListener("mousemove" , function(event){
+        var x = event.clientX - canvas.offsetLeft - vpx - document.body.scrollLeft - document.documentElement.scrollLeft;
+        var y = event.clientY - canvas.offsetTop - vpy - document.body.scrollTop - document.documentElement.scrollTop;
+        angleY = -x*0.0001;
+        angleX = -y*0.0001;
+    });
+    var Animation = function(){
+        this.init();
+    };
+    Animation.prototype = {
+        isrunning:false,
+        init:function(){
+            balls = [];
+            var num = 500;
+            for(var i=0;i<=num;i++){
+                var a , b;
+                var k = -1+(2*(i+1)-1)/num;
+                var a = Math.acos(k);
+                var b = a*Math.sqrt(num*Math.PI);
+                var x = Radius*Math.sin(a)*Math.cos(b);
+                var y = Radius*Math.sin(a)*Math.sin(b);
+                var z = Radius*Math.cos(a);
+                var b = new ball(x , y , z , 1.5);
+                balls.push(b);
+                b.paint();
             }
-        </style>
-    </head>
-    <body>
+        },
 
+        start:function(){
+            this.isrunning = true;
+            animate();
+        },
 
-        <div id="app">
-            <div v-for="item of tasks" class="a">
-                <p>
-                    <span v-text="item.bigtxt"></span>
-                </p>
-                <p>
-                    <span v-text="item.smtxt"></span>
-                </p>
-                <p>
-                    <span v-text="addtion($index)"></span>
-                    {{--<span v-if="item.state">+</span>--}}
-                    {{--<span v-else="item.state">-</span>--}}
-                    {{--<span v-text="item.rwjc"></span>--}}
-                </p>
-            </div>
-        </div>
-
-        <script src="http://petos.petnut.cn/webpos_free/templates/default/js/jquery-2.0.3.min.js"></script>
-        <script src="http://petos.petnut.cn/webpos_free/templates/default/js/vue.min.js"></script>
-        <script src="http://petos.petnut.cn/webpos_free/templates/default/js/vue-resource.min.js"></script>
-        <script>
-            var test = new Vue({
-                el : '#app',
-                data: {
-                    tasks:[]
-                },
-                methods : {
-                    addtion : function(index){
-                        if(this.tasks[index].state){
-                            return '+' + this.tasks[index].rwjc;
-                        }else{
-                            return '-' + this.tasks[index].rwjc;
-                        }
-                    }
-                },
-                ready : function(){
-                    //请求后台数据
-                    this.$http.get('http://a.zqiqi.cn/test').then(function(response){
-                        console.log(response);
-                        this.tasks = response.data;
-                    })
-                }
-            })
-        </script>
-
-    </body>
+        stop:function(){
+            this.isrunning = false;
+        }
+    }
+    function animate(){
+        ctx.clearRect(0,0,canvas.width , canvas.height);
+        rotateX();
+        rotateY();
+        balls.sort(function(a , b){
+            return b.z-a.z;
+        })
+        for(var i=0;i< balls.length;i++){
+            balls[i].paint();
+        }
+        if(animation.isrunning) {
+            if("requestAnimationFrame" in window){
+                requestAnimationFrame(animate);
+            }
+            else if("webkitRequestAnimationFrame" in window){
+                webkitRequestAnimationFrame(animate);
+            }
+            else if("msRequestAnimationFrame" in window){
+                msRequestAnimationFrame(animate);
+            }
+            else if("mozRequestAnimationFrame" in window){
+                mozRequestAnimationFrame(animate);
+            }
+        }
+    }
+    function rotateX(){
+        var cos = Math.cos(angleX);
+        var sin = Math.sin(angleX);
+        for(var i=0;i< balls.length;i++){
+            var y1 = balls[i].y * cos - balls[i].z * sin;
+            var z1 = balls[i].z * cos + balls[i].y * sin;
+            balls[i].y = y1;
+            balls[i].z = z1;
+        }
+    }
+    function rotateY(){
+        var cos = Math.cos(angleY);
+        var sin = Math.sin(angleY);
+        for(var i=0;i< balls.length;i++){
+            var x1 = balls[i].x * cos - balls[i].z * sin;
+            var z1 = balls[i].z * cos + balls[i].x * sin;
+            balls[i].x = x1;
+            balls[i].z = z1;
+        }
+    }
+    var ball = function(x , y , z , r){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.r = r;
+        this.width = 2*r;
+    }
+    ball.prototype = {
+        paint:function(){
+            var fl = 450 //焦距
+            ctx.save();
+            ctx.beginPath();
+            var scale = fl / (fl - this.z);
+            var alpha = (this.z+Radius)/(2*Radius);
+            ctx.arc(vpx + this.x, vpy + this.y, this.r*scale , 0 , 2*Math.PI , true);
+            ctx.fillStyle = "rgba(255,255,255,"+(alpha+0.5)+")"
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+    var animation = new Animation();
+    animation.start();
+    document.getElementById("controlBtn").onclick = function(){
+        this.innerText === "开始" ? this.innerText="停止" : this.innerText="开始";
+        this.innerText === "开始" ? animation.stop() : animation.start();;
+    }
+</script>
+</body>
 </html>
