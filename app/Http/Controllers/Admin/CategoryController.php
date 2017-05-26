@@ -16,4 +16,8 @@ class CategoryController extends Controller
     public function add(){
         return view('admin.cate.add');
     }
+
+    public function edit(){
+        return view('admin.cate.edit');
+    }
 }
