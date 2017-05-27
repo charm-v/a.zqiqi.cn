@@ -7,14 +7,14 @@
 @section('little-nav')
     <li><a href="#" class="am-icon-home">分类管理</a></li>
     {{--<li><a href="#">分类列表</a></li>--}}
-    <li class="am-active">添加分类</li>
+    <li class="am-active">编辑分类</li>
 @endsection
 
 @section('content')
     <div class="tpl-portlet-components">
         <div class="portlet-title">
             <div class="caption font-green bold">
-                <span class="am-icon-code"></span> 添加分类
+                <span class="am-icon-code"></span> 编辑分类
             </div>
 
         </div>
