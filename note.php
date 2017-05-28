@@ -20,3 +20,6 @@ php artisan make:controller CategoryController
 
 //2017.05.20
 垂直方向焦点轮播问题
+
+//2017.0528
+ 提交冲突问题
