@@ -23,3 +23,6 @@ php artisan make:controller CategoryController
 
 //2017.0528
  提交冲突问题
+ 
+ //2017.05.29
+  记一次还没有解决的冲突问题
