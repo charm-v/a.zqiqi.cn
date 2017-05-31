@@ -28,3 +28,6 @@ php artisan make:controller CategoryController
   记一次还没有解决的冲突问题
  
  //2017.05.30
+ 
+ //2017.05.31
+ 好像本命年总会有那么多的不顺
