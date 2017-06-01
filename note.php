@@ -31,3 +31,6 @@ php artisan make:controller CategoryController
  
  //2017.05.31
  好像本命年总会有那么多的不顺
+
+ //2017.06.01
+ 我要去烧烧香，保佑我的朋友们都平平安安顺顺利利
