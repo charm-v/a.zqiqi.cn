@@ -34,3 +34,6 @@ php artisan make:controller CategoryController
 
  //2017.06.01
  我要去烧烧香，保佑我的朋友们都平平安安顺顺利利
+ 
+ //2017.06.02
+ 很忙很开心
