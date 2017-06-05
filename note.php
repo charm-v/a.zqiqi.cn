@@ -40,3 +40,7 @@ php artisan make:controller CategoryController
 
  //2017.06.04
  人什么时候都要有自己的生活，有自己的爱好
+ 
+ //2017.06.05
+ 好好写代码，多抽时间优化代码
+ 
