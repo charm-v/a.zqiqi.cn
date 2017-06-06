@@ -48,3 +48,4 @@ php artisan make:controller CategoryController
  开心
  程序员的开心你懂吗
  
+ 明天把图片的预加载补上
