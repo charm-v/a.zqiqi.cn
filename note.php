@@ -44,3 +44,7 @@ php artisan make:controller CategoryController
  //2017.06.05
  好好写代码，多抽时间优化代码
  
+ //2017.06.06
+ 开心
+ 程序员的开心你懂吗
+ 
