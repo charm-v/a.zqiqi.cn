@@ -49,3 +49,7 @@ php artisan make:controller CategoryController
  程序员的开心你懂吗
  
  明天把图片的预加载补上
+ 
+ 
+ //2017.06.06
+ 666666
