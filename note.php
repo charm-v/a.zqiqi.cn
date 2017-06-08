@@ -51,5 +51,8 @@ php artisan make:controller CategoryController
  明天把图片的预加载补上
  
  
- //2017.06.06
+ //2017.06.07
  666666
+ 
+ //2017.06.08
+ 人生总是起起落落
