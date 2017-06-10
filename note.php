@@ -56,3 +56,8 @@ php artisan make:controller CategoryController
  
  //2017.06.08
  人生总是起起落落
+
+ 
+ //2017.06.10
+ 每个人都有很努力很努力都做不到的事情
+ 
