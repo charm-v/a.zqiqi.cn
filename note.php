@@ -61,3 +61,7 @@ php artisan make:controller CategoryController
  //2017.06.10
  每个人都有很努力很努力都做不到的事情
  
+ //2017.06.11
+ 认认真真的写个页面
+ 
+ 
