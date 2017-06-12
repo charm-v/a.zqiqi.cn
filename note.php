@@ -64,4 +64,6 @@ php artisan make:controller CategoryController
  //2017.06.11
  认认真真的写个页面
  
+  //2017.06.12
+ 头疼
  
