@@ -69,3 +69,8 @@ php artisan make:controller CategoryController
  
 //2017.06.13
 加油项目快完成了
+
+//2017.06.14
+真希望你说的都是真的
+ 
+ 
