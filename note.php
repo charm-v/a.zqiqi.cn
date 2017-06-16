@@ -75,3 +75,6 @@ php artisan make:controller CategoryController
  
  //2017.06.15
  祝你安好
+ 
+ //2017.06.16
+ 1
