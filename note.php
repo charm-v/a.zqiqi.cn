@@ -78,3 +78,6 @@ php artisan make:controller CategoryController
  
  //2017.06.16
  1
+
+ //2017.06.17
+ 生病得人都是祖宗  
