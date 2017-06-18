@@ -80,4 +80,7 @@ php artisan make:controller CategoryController
  1
 
  //2017.06.17
- 生病得人都是祖宗  
+ 生病得人都是祖宗 
+ 
+ //2017.06.18
+不管做什么都要努力做到最好
