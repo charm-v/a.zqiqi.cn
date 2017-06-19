@@ -84,3 +84,6 @@ php artisan make:controller CategoryController
  
  //2017.06.18
 不管做什么都要努力做到最好
+ 
+ //2017.06.19
+ 加油！
