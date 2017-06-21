@@ -90,3 +90,6 @@ php artisan make:controller CategoryController
 
  //2017.06.20
  你走开
+ 
+ //2017.06.21
+ 事不过三是做事的原则
