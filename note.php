@@ -96,3 +96,6 @@ php artisan make:controller CategoryController
 
  //2017.06.22
  不管什么样得方式，总要有一件事情要坚持下去
+ 
+ // 2018.5.24
+ 无论如何请坚持下去
